@@ -1,0 +1,62 @@
+[
+    {
+        "id":1,
+        "name":"Cyber Cell",
+        "image":"/images/Cyber.jpg",
+        "Info":""   
+    },
+    {
+        "id":2,
+        "name":"Geeks For Geeks",
+        "image":"/images/gfg.jpg",
+        "Info":""   
+    },
+    {
+        "id":3,
+        "name":"G.D.S.c",
+        "image":"/images/gdsc.jpg",
+        "Info":""   
+    },
+    {
+        "id":4,
+        "name":"EDC",
+        "image":"/images/edc.jpg",
+        "Info":""   
+    },
+    {
+        "id":5,
+        "name":"Vishwa Racers-Supra",
+        "image":"/images/vr.jpg",
+        "Info":""   
+    },
+    {
+        "id":6,
+        "name":"Rotract Club",
+        "image":"/images/rotaract.jpg",
+        "Info":""   
+    },
+    {
+        "id":7,
+        "name":"IEEE",
+        "image":"/images/ieee.jpg",
+        "Info":""   
+    },
+    {
+        "id":8,
+        "name":"Sports Club",
+        "image":"/images/sports.jpg",
+        "Info":""   
+    },
+    {
+        "id":9,
+        "name":"O.I.R",
+        "image":"/images/oir.jpg",
+        "Info":""   
+    },
+    {
+        "id":10,
+        "name":"Antarishk",
+        "image":"/images/antarishk.jpg",
+        "Info":""   
+    }
+]
