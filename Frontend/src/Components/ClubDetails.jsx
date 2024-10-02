@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import clubsData from '../../public/list.json';
 
 function ClubDetails() {
   const { id } = useParams();
