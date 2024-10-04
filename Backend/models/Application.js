@@ -1,31 +1,46 @@
 const mongoose = require('mongoose');
 
-const ApplicationSchema = new mongoose.Schema({
+// Define the schema for the application
+const applicationSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  email: {
+  phone: {
     type: String,
     required: true,
   },
+  skills: {
+    type: [String], 
+    required: true,
+  },
   prn: {
-    type: Number,
+    type: String,
+    required: true,
+    length: 8, // Ensure it's 8 characters
+  },
+  email: {
+    type: String,
+    required: true,
+    validate: {
+      validator: function(v) {
+        return /.+@viit\.ac\.in$/.test(v); // Regex to validate email domain
+      },
+      message: (props) => `${props.value} is not a valid email domain!`,
+    },
+  },
+  club: {
+    type: String,
     required: true,
   },
   domain: {
     type: String,
     required: true,
   },
-  reason:
-  {
-    type:String,
-    required: true,
-  },
-  submittedAt: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
-module.exports = mongoose.model('Application', ApplicationSchema);
+
+const Application = mongoose.model('Application', applicationSchema);
+
+
+module.exports = Application;

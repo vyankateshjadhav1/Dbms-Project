@@ -1,24 +1,19 @@
 const mongoose = require('mongoose');
 
-const clubSchema = new mongoose.Schema({
+const skillSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
         unique: true,
         trim: true
     },
-    domain: [{
+    domain: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Domain',
-        required: true
-    }],
-    supervisor: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
         required: true
     }
 });
 
-const Club = mongoose.model('Club', clubSchema);
+const Skill = mongoose.model('Skill', skillSchema);
 
-module.exports = Club;
+module.exports = Skill;

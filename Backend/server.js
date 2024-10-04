@@ -1,26 +1,32 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const dotenv = require('dotenv');
-const userRoutes = require('./routes/users');
-const clubRoutes = require('./routes/clubs');
-const eventRoutes = require('./routes/events');
-const membershipRoutes = require('./routes/memberships');
+
+// Routes
+const applicationRoutes = require('./routes/applicationRoutes');
+const clubRoutes = require('./routes/clubRoutes');
+const domainRoutes = require('./routes/domainRoutes');
+const skillRoutes = require('./routes/skillRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 dotenv.config();
 
-const app = express();
 connectDB();
 
+const app = express();
+
+// Middleware to parse JSON data
 app.use(express.json());
-
-// Use the routes
-app.use('/api/users', userRoutes);
+app.use(cors());
 app.use('/api/clubs', clubRoutes);
-app.use('/api/events', eventRoutes);
-app.use('/api/memberships', membershipRoutes);
+app.use('/api/applications', applicationRoutes);
+app.use('/api/domains', domainRoutes);
+app.use('/api/skills', skillRoutes);
+app.use('/api/users', userRoutes);
 
-app.get('/', (req, res) => res.send('API Running'));
+const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 5000;  
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

@@ -1,30 +1,26 @@
-
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/Home';
+import Clubs from './pages/Clubs';
+import Application from './pages/Application';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './index.css';
 
-import Home from './Home/Home';
-import Clubs from './Components/Clubs';
-import ClubDetails from './Components/ClubDetails';  
-import Signup from './Components/Signup';
-import AboutUs from './Components/AboutUs';
-import AdminDashboard from './Components/AdminDashboard';
-import SupervisorDashboard from './Components/SupervisorDashboard';
-
-function App() {
+const App = () => {
   return (
-    <>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/clubs" element={<Clubs />} />
-        <Route path="/clubs/:id" element={<ClubDetails />} /> 
+        <Route path="/application" element={<Application />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/aboutus" element={<AboutUs  />}/>
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/super" element={<SupervisorDashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-    </>
+    </Router>
   );
-}
+};
 
 export default App;
